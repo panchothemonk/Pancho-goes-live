@@ -144,10 +144,8 @@ export default function Hero() {
                 src={`/images/pancho/pancho-${num}.png`}
                 alt="Pancho"
                 fill
-                className={`object-contain transition-all duration-1000 sticker ${
-                  i === currentImg
-                    ? "opacity-100 scale-100"
-                    : "opacity-0 scale-90"
+                className={`object-contain transition-opacity duration-700 sticker ${
+                  i === currentImg ? "opacity-100" : "opacity-0"
                 }`}
                 priority={i === 0}
               />

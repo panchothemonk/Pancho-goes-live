@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PANCHO | The Angriest Monkey In Crypto",
+  title: "PANCHO — sin ganas. still here.",
   description:
-    "From viral moments to real-world chaos. Pancho is more than a brand — he's a movement. Explore the Panchoverse.",
+    "the degen monkey in all of us. from viral memes to real products — trading bots, prediction arenas, and a token that pays you back. the panchoverse is here.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="noise min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
