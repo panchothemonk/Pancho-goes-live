@@ -17,7 +17,8 @@ export default function ScrollingFaces() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
         className="text-center mb-12 px-6"
       >
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-3">
@@ -43,6 +44,7 @@ export default function ScrollingFaces() {
                   width={176}
                   height={176}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -65,6 +67,7 @@ export default function ScrollingFaces() {
                   width={176}
                   height={176}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -46,6 +46,7 @@ export default function About() {
                     alt={`Pancho variant ${num}`}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                 </motion.div>
               ))}

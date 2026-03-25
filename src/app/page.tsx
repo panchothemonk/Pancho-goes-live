@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -17,29 +17,49 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   const [splashDone, setSplashDone] = useState(false);
+  const [ready, setReady] = useState(false);
 
   const handleSplashComplete = useCallback(() => {
     setSplashDone(true);
+    // Small delay so the browser can paint before animations start
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setReady(true);
+      });
+    });
+  }, []);
+
+  // Preload critical hero images during splash
+  useEffect(() => {
+    const preloadImages = [1, 4, 8].map((num) => {
+      const img = new window.Image();
+      img.src = `/images/pancho/pancho-${num}.webp`;
+      return img;
+    });
+    return () => { preloadImages.forEach((img) => { img.src = ""; }); };
   }, []);
 
   return (
     <div className="noise">
       <SplashScreen onComplete={handleSplashComplete} />
-      {/* Render content immediately but hidden until splash completes */}
-      <div className={splashDone ? "" : "invisible pointer-events-none fixed"}>
-        <Navbar />
-        <Hero />
-        <Marquee />
-        <About />
-        <ScrollingFaces />
-        <Ecosystem />
-        <PFPStudio />
-        <TokenSection />
-        <SlotMachine />
-        <Community />
-        <CTA />
-        <Footer />
-      </div>
+      {splashDone && (
+        <div
+          className={`transition-opacity duration-500 ${ready ? "opacity-100" : "opacity-0"}`}
+        >
+          <Navbar />
+          <Hero />
+          <Marquee />
+          <About />
+          <ScrollingFaces />
+          <Ecosystem />
+          <PFPStudio />
+          <TokenSection />
+          <SlotMachine />
+          <Community />
+          <CTA />
+          <Footer />
+        </div>
+      )}
     </div>
   );
 }

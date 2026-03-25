@@ -243,6 +243,7 @@ export default function PFPStudio() {
                       width={64}
                       height={64}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </motion.button>
                 ))}
