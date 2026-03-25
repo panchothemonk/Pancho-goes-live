@@ -90,15 +90,79 @@ export default function PFPStudio() {
       const y = (512 - size) / 2 + 20;
       ctx.drawImage(img, x, y, size, size);
 
-      // Draw mood text
-      ctx.font = "bold 24px Inter, sans-serif";
-      ctx.fillStyle = bgColors[selectedBg].value === "#1a1a1a" ? "#fff" : "#1a1a1a";
-      ctx.textAlign = "center";
-      ctx.fillText(moods[selectedMood].label, 256, 40);
+      // --- Draw mood tag pill (top-left corner) ---
+      const mood = moods[selectedMood];
+      const tagText = `${mood.emoji} ${mood.label}`;
+      const isDark = bgColors[selectedBg].value === "#1a1a1a";
+
+      ctx.font = "bold 18px -apple-system, BlinkMacSystemFont, sans-serif";
+      const textWidth = ctx.measureText(tagText).width;
+      const pillW = textWidth + 28;
+      const pillH = 36;
+      const pillX = 20;
+      const pillY = 20;
+
+      // Pill background
+      ctx.fillStyle = isDark ? "#FFF8EC" : "#FFF8EC";
+      ctx.beginPath();
+      ctx.roundRect(pillX, pillY, pillW, pillH, pillH / 2);
+      ctx.fill();
+
+      // Pill border
+      ctx.strokeStyle = "#1a1a1a";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(pillX, pillY, pillW, pillH, pillH / 2);
+      ctx.stroke();
+
+      // Pill text
+      ctx.fillStyle = "#1a1a1a";
+      ctx.font = "bold 16px -apple-system, BlinkMacSystemFont, sans-serif";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "middle";
+      ctx.fillText(tagText, pillX + 14, pillY + pillH / 2 + 1);
+
+      // --- Draw sparkle in bottom-right corner ---
+      const sparkleSize = 24;
+      const sparkleX = 512 - 40;
+      const sparkleY = 512 - 40;
+      ctx.fillStyle = "#FFB800";
+      ctx.beginPath();
+      // 4-point star
+      const arms = 4;
+      const outerR = sparkleSize / 2;
+      const innerR = outerR * 0.35;
+      for (let j = 0; j < arms * 2; j++) {
+        const r = j % 2 === 0 ? outerR : innerR;
+        const angle = (j * Math.PI) / arms - Math.PI / 2;
+        const sx = sparkleX + r * Math.cos(angle);
+        const sy = sparkleY + r * Math.sin(angle);
+        if (j === 0) ctx.moveTo(sx, sy);
+        else ctx.lineTo(sx, sy);
+      }
+      ctx.closePath();
+      ctx.fill();
+
+      // Smaller sparkle offset
+      const s2X = sparkleX - 16;
+      const s2Y = sparkleY - 14;
+      const s2R = outerR * 0.5;
+      const s2Inner = s2R * 0.35;
+      ctx.beginPath();
+      for (let j = 0; j < arms * 2; j++) {
+        const r = j % 2 === 0 ? s2R : s2Inner;
+        const angle = (j * Math.PI) / arms - Math.PI / 4;
+        const sx = s2X + r * Math.cos(angle);
+        const sy = s2Y + r * Math.sin(angle);
+        if (j === 0) ctx.moveTo(sx, sy);
+        else ctx.lineTo(sx, sy);
+      }
+      ctx.closePath();
+      ctx.fill();
 
       // Download
       const link = document.createElement("a");
-      link.download = `pancho-pfp-${selectedPancho}.webp`;
+      link.download = `pancho-pfp-${selectedPancho}.png`;
       link.href = canvas.toDataURL("image/png");
       link.click();
     };
