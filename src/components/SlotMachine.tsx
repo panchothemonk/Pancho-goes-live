@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useFadeIn } from "@/hooks/useFadeIn";
+
 
 const PANCHO_COUNT = 23;
 const allPanchos = Array.from({ length: PANCHO_COUNT }, (_, i) => i + 1);
@@ -184,15 +184,13 @@ export default function SlotMachine() {
     });
   }, [results]);
 
-  const sectionRef = useFadeIn();
-
   return (
-    <section ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden">
+    <section className="relative py-24 sm:py-32 overflow-hidden">
       {showConfetti && <Confetti count={150} />}
 
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-12 fade-in-section">
+        <div className="text-center mb-12">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FFB800] mb-4 block">
             try your luck
           </span>
@@ -205,7 +203,7 @@ export default function SlotMachine() {
         </div>
 
         {/* Slot Machine */}
-        <div className="relative fade-in-section">
+        <div className="relative">
           {/* Machine frame — brutal style */}
           <div className="relative p-8 sm:p-10 rounded-[24px] bg-white border-[3px] border-[#1a1a1a] shadow-[8px_8px_0px_#1a1a1a]">
             {/* Top bar */}

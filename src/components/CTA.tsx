@@ -2,15 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useFadeIn } from "@/hooks/useFadeIn";
+
 
 export default function CTA() {
-  const sectionRef = useFadeIn();
-
   return (
-    <section ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <div className="mb-10 fade-in-section">
+        <div className="mb-10">
           <div className="relative w-40 h-48 mx-auto animate-float">
             <Image
               src="/images/pancho/pancho-8.webp"
@@ -22,19 +20,19 @@ export default function CTA() {
           </div>
         </div>
 
-        <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-[0.95] text-[#1a1a1a] fade-in-section">
+        <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-[0.95] text-[#1a1a1a]">
           the world is loud.
           <br />
           <span className="text-[#FF3DB8]">pancho says &quot;ok.&quot;</span>
         </h2>
 
-        <p className="text-lg sm:text-xl text-[#666] max-w-2xl mx-auto mb-12 leading-relaxed fade-in-section">
+        <p className="text-lg sm:text-xl text-[#666] max-w-2xl mx-auto mb-12 leading-relaxed">
           from viral memes to real-world products. a trading bot. a prediction arena.
           a bump bot. a community. and a token that pays you back 50%. the panchoverse
           isn&apos;t coming — it&apos;s already here. sin ganas pero con profit.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in-section">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="https://panchoverse.com"
             target="_blank"

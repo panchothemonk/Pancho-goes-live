@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useFadeIn } from "@/hooks/useFadeIn";
+
 
 const galleryImages = [2, 3, 5, 6, 7, 9, 11, 13, 14];
 
@@ -16,10 +16,8 @@ const traits = [
 ];
 
 export default function About() {
-  const sectionRef = useFadeIn();
-
   return (
-    <section id="about" ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden">
+    <section id="about" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Grid */}
@@ -91,7 +89,7 @@ export default function About() {
         </div>
 
         {/* Catchphrase */}
-        <div className="mt-20 text-center fade-in-section">
+        <div className="mt-20 text-center">
           <p className="text-2xl sm:text-3xl font-black text-[#1a1a1a]">
             i am pancho. you are pancho.{" "}
             <span className="text-[#FF3DB8]">we are pancho.</span>

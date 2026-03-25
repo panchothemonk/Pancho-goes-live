@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useFadeIn } from "@/hooks/useFadeIn";
+
 
 const communityLinks = [
   {
@@ -34,13 +34,11 @@ const communityLinks = [
 const panchoFaces = [1, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
 
 export default function Community() {
-  const sectionRef = useFadeIn();
-
   return (
-    <section id="community" ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden">
+    <section id="community" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20 fade-in-section">
+        <div className="text-center mb-20">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FFB800] mb-4 block">
             the gang
           </span>
@@ -63,7 +61,7 @@ export default function Community() {
               href={card.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group brutal-card p-8 cursor-pointer fade-in-section"
+              className="group brutal-card p-8 cursor-pointer"
             >
               <div className="text-4xl mb-4">{card.icon}</div>
               <h3 className="text-xl font-black mb-2 text-[#1a1a1a] group-hover:text-[#FF3DB8] transition-colors">

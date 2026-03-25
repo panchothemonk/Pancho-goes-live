@@ -35,7 +35,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
             className="brutal-tag-pink mb-6 inline-flex"
           >
             <span className="w-2 h-2 rounded-full bg-[#FF3DB8] animate-pulse-soft" />
@@ -46,7 +46,7 @@ export default function Hero() {
             <motion.h1
               initial={{ y: 100 }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#1a1a1a]"
             >
               meet
@@ -56,7 +56,7 @@ export default function Hero() {
             <motion.h1
               initial={{ y: 100 }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#FF3DB8]"
             >
               pancho.
@@ -66,7 +66,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             className="text-lg sm:text-xl text-[#666] max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
           >
             good days. bad days. same pancho. from viral memes to real products —
@@ -76,7 +76,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+            transition={{ duration: 0.4, delay: 0.35 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <a
@@ -102,7 +102,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
             className="grid grid-cols-4 gap-3 mt-10"
           >
             {stats.map((stat, i) => (
@@ -110,7 +110,7 @@ export default function Hero() {
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2 + i * 0.1 }}
+                transition={{ delay: 0.45 + i * 0.05 }}
                 className="text-center"
               >
                 <span className="text-lg">{stat.icon}</span>
@@ -123,9 +123,9 @@ export default function Hero() {
 
         {/* Hero Character */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.6, rotate: -8 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="flex-1 relative flex items-center justify-center"
         >
           {/* Character background circle */}
@@ -156,7 +156,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
           >
             <motion.div
               animate={{ y: [-8, 8, -8] }}
@@ -169,7 +169,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
+            transition={{ delay: 0.55, duration: 0.4 }}
           >
             <motion.div
               animate={{ y: [6, -10, 6] }}
@@ -182,7 +182,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6 }}
+            transition={{ delay: 0.6 }}
           >
             <motion.div
               animate={{ y: [-5, 10, -5], x: [-3, 3, -3] }}

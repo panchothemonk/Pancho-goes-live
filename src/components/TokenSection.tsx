@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useFadeIn } from "@/hooks/useFadeIn";
+
 
 const revenueStreams = [
   { source: "Pancho Fun Bot", fee: "1% on sells", icon: "⚡" },
@@ -18,13 +18,11 @@ const tokenStats = [
 ];
 
 export default function TokenSection() {
-  const sectionRef = useFadeIn();
-
   return (
-    <section id="token" ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden bg-[#1a1a1a]">
+    <section id="token" className="relative py-24 sm:py-32 overflow-hidden bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16 fade-in-section">
+        <div className="text-center mb-16">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
             $PANCHO token
           </span>
@@ -120,7 +118,7 @@ export default function TokenSection() {
           </div>
         </div>
 
-        <p className="text-center text-[#999] mt-12 text-sm font-medium fade-in-section">
+        <p className="text-center text-[#999] mt-12 text-sm font-medium">
           sin ganas pero con profit. 🌮
         </p>
       </div>

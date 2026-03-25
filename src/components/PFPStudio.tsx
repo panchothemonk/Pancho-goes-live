@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useFadeIn } from "@/hooks/useFadeIn";
+
 
 const PANCHO_COUNT = 23;
 const allPanchos = Array.from({ length: PANCHO_COUNT }, (_, i) => i + 1);
@@ -105,15 +105,13 @@ export default function PFPStudio() {
     img.src = `/images/pancho/pancho-${selectedPancho}.webp`;
   }, [selectedPancho, selectedMood, selectedBg]);
 
-  const sectionRef = useFadeIn();
-
   return (
-    <section ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#1a1a1a]" />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16 fade-in-section">
+        <div className="text-center mb-16">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#8B5CF6] mb-4 block">
             pancho studio
           </span>
@@ -129,7 +127,7 @@ export default function PFPStudio() {
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Preview — Left side */}
           <div
-            className="relative fade-in-section"
+            className="relative"
           >
             {/* PFP Preview Card */}
             <div
@@ -207,7 +205,7 @@ export default function PFPStudio() {
           </div>
 
           {/* Controls — Right side */}
-          <div className="space-y-8 fade-in-section">
+          <div className="space-y-8">
             {/* Pancho selector */}
             <div>
               <h3 className="text-sm font-black uppercase tracking-wider text-[#1a1a1a] mb-3">

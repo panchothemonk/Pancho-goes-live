@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useFadeIn } from "@/hooks/useFadeIn";
+
 
 const products = [
   {
@@ -48,13 +48,11 @@ const products = [
 ];
 
 export default function Ecosystem() {
-  const sectionRef = useFadeIn();
-
   return (
-    <section id="products" ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
+    <section id="products" className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20 fade-in-section">
+        <div className="text-center mb-20">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
             products
           </span>
@@ -76,7 +74,7 @@ export default function Ecosystem() {
               href={product.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group brutal-card p-8 cursor-pointer fade-in-section"
+              className="group brutal-card p-8 cursor-pointer"
             >
               <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
                 <motion.div
