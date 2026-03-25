@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="noise">
+    <div>
       <SplashScreen onComplete={handleSplashComplete} />
       {splashDone && (
         <div

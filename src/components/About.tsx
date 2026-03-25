@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useFadeIn } from "@/hooks/useFadeIn";
 
 const galleryImages = [2, 3, 5, 6, 7, 9, 11, 13, 14];
 
@@ -15,31 +16,20 @@ const traits = [
 ];
 
 export default function About() {
+  const sectionRef = useFadeIn();
+
   return (
-    <section id="about" className="relative py-24 sm:py-32 overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image Grid — sticker-style bento */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="relative"
-          >
+          {/* Image Grid */}
+          <div className="fade-in-section relative">
             <div className="grid grid-cols-3 gap-3">
               {galleryImages.map((num, i) => (
                 <motion.div
                   key={num}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: i * 0.08,
-                    duration: 0.6,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  whileHover={{ scale: 1.1, rotate: i % 2 === 0 ? 3 : -3, zIndex: 10 }}
-                  className="aspect-square rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] bg-[#FFF8EC] group cursor-pointer relative shadow-[4px_4px_0px_#1a1a1a] hover:shadow-[6px_6px_0px_#1a1a1a] transition-all"
+                  whileHover={{ scale: 1.08, rotate: i % 2 === 0 ? 2 : -2, zIndex: 10 }}
+                  className="aspect-square rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] bg-[#FFF8EC] group cursor-pointer relative shadow-[4px_4px_0px_#1a1a1a] hover:shadow-[6px_6px_0px_#1a1a1a] transition-shadow"
                 >
                   <Image
                     src={`/images/pancho/pancho-${num}.webp`}
@@ -52,46 +42,23 @@ export default function About() {
               ))}
             </div>
             {/* Floating badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
-              className="absolute -bottom-4 -right-4 px-5 py-3 rounded-2xl bg-[#FF3DB8] text-white font-black text-sm border-[3px] border-[#1a1a1a] shadow-[4px_4px_0px_#1a1a1a]"
-            >
+            <div className="absolute -bottom-4 -right-4 px-5 py-3 rounded-2xl bg-[#FF3DB8] text-white font-black text-sm border-[3px] border-[#1a1a1a] shadow-[4px_4px_0px_#1a1a1a]">
               23+ VARIANTS 🌮
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Content */}
-          <div>
-            <motion.span
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block"
-            >
+          <div className="fade-in-section">
+            <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
               who is pancho?
-            </motion.span>
+            </span>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 leading-[1.05] text-[#1a1a1a]"
-            >
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 leading-[1.05] text-[#1a1a1a]">
               the degen ape{" "}
               <span className="text-[#FF3DB8]">in all of us.</span>
-            </motion.h2>
+            </h2>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="space-y-4 mb-10"
-            >
+            <div className="space-y-4 mb-10">
               <p className="text-lg text-[#666] leading-relaxed">
                 pancho doesn&apos;t yell. pancho doesn&apos;t hype. pancho wakes up tired,
                 drinks his coffee, checks the charts, and says &quot;ok.&quot; that&apos;s it.
@@ -106,45 +73,30 @@ export default function About() {
               <p className="text-lg text-[#666] leading-relaxed font-bold italic">
                 &quot;good days. bad days. same pancho.&quot;
               </p>
-            </motion.div>
+            </div>
 
             {/* Trait tags */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-wrap gap-2"
-            >
-              {traits.map((trait, i) => (
+            <div className="flex flex-wrap gap-2">
+              {traits.map((trait) => (
                 <motion.span
                   key={trait.text}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + i * 0.06 }}
-                  whileHover={{ scale: 1.1, rotate: i % 2 === 0 ? 3 : -3 }}
+                  whileHover={{ scale: 1.1, rotate: 3 }}
                   className="brutal-tag cursor-default"
                 >
                   {trait.emoji} {trait.text}
                 </motion.span>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Catchphrase */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
+        <div className="mt-20 text-center fade-in-section">
           <p className="text-2xl sm:text-3xl font-black text-[#1a1a1a]">
             i am pancho. you are pancho.{" "}
             <span className="text-[#FF3DB8]">we are pancho.</span>
           </p>
-        </motion.div>
+        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 section-divider" />

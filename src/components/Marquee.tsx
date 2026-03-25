@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const phrases = [
   "ok. 🌮",
   "sin ganas",
@@ -26,12 +24,7 @@ export default function Marquee() {
   const repeatedPhrases = [...phrases, ...phrases, ...phrases];
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="marquee-strip"
-    >
+    <div className="marquee-strip">
       <div className="flex animate-marquee">
         {repeatedPhrases.map((phrase, i) => (
           <span key={i} className="mx-6 whitespace-nowrap uppercase tracking-wider flex items-center gap-3">
@@ -40,6 +33,6 @@ export default function Marquee() {
           </span>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }

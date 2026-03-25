@@ -3,6 +3,7 @@
 import { useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useFadeIn } from "@/hooks/useFadeIn";
 
 const PANCHO_COUNT = 23;
 const allPanchos = Array.from({ length: PANCHO_COUNT }, (_, i) => i + 1);
@@ -104,19 +105,15 @@ export default function PFPStudio() {
     img.src = `/images/pancho/pancho-${selectedPancho}.webp`;
   }, [selectedPancho, selectedMood, selectedBg]);
 
+  const sectionRef = useFadeIn();
+
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
+    <section ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#1a1a1a]" />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16 fade-in-section">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#8B5CF6] mb-4 block">
             pancho studio
           </span>
@@ -127,15 +124,12 @@ export default function PFPStudio() {
             pick a pancho. pick a mood. pick a vibe. generate your pfp.
             become pancho. ok.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Preview — Left side */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative"
+          <div
+            className="relative fade-in-section"
           >
             {/* PFP Preview Card */}
             <div
@@ -210,15 +204,10 @@ export default function PFPStudio() {
 
             {/* Hidden canvas for export */}
             <canvas ref={canvasRef} className="hidden" />
-          </motion.div>
+          </div>
 
           {/* Controls — Right side */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
+          <div className="space-y-8 fade-in-section">
             {/* Pancho selector */}
             <div>
               <h3 className="text-sm font-black uppercase tracking-wider text-[#1a1a1a] mb-3">
@@ -333,7 +322,7 @@ export default function PFPStudio() {
             <p className="text-xs text-[#999] font-medium text-center">
               roll until it hits. 🌮
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
 

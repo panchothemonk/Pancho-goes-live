@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useFadeIn } from "@/hooks/useFadeIn";
 
 const products = [
   {
@@ -47,17 +48,13 @@ const products = [
 ];
 
 export default function Ecosystem() {
+  const sectionRef = useFadeIn();
+
   return (
-    <section id="products" className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
+    <section id="products" ref={sectionRef} className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-20"
-        >
+        <div className="text-center mb-20 fade-in-section">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
             products
           </span>
@@ -69,28 +66,19 @@ export default function Ecosystem() {
             a closer look at pancho&apos;s ecosystem. real products. real infrastructure.
             not just memes — though those are pretty good too.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Product Cards — 2x2 grid */}
+        {/* Product Cards */}
         <div className="grid md:grid-cols-2 gap-6">
-          {products.map((product, i) => (
-            <motion.a
+          {products.map((product) => (
+            <a
               key={product.title}
               href={product.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: i * 0.12,
-                duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="group brutal-card p-8 cursor-pointer"
+              className="group brutal-card p-8 cursor-pointer fade-in-section"
             >
               <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
-                {/* Character */}
                 <motion.div
                   whileHover={{ rotate: [0, -5, 5, 0], scale: 1.1 }}
                   transition={{ duration: 0.5 }}
@@ -101,11 +89,11 @@ export default function Ecosystem() {
                     alt={product.title}
                     fill
                     className="object-contain sticker"
+                    loading="lazy"
                   />
                 </motion.div>
 
                 <div className="flex-1">
-                  {/* Tag */}
                   <div className="flex items-center gap-3 mb-3">
                     <span
                       className="text-[10px] font-black tracking-[0.15em] px-3 py-1.5 rounded-full border-2"
@@ -129,7 +117,6 @@ export default function Ecosystem() {
                     {product.desc}
                   </p>
 
-                  {/* Feature chips */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {product.features.map((f) => (
                       <span
@@ -149,7 +136,7 @@ export default function Ecosystem() {
                   </div>
                 </div>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>

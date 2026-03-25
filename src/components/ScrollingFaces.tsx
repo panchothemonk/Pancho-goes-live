@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const row1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -9,25 +8,18 @@ const row2 = [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 1];
 export default function ScrollingFaces() {
   return (
     <section className="relative py-20 overflow-hidden bg-[#FF3DB8]">
-      {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#1a1a1a]" />
       <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1a1a1a]" />
 
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-12 px-6"
-      >
+      <div className="text-center mb-12 px-6">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-3">
           i am pancho. you are pancho.
         </h2>
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#1a1a1a]">
           we are pancho.
         </h2>
-      </motion.div>
+      </div>
 
       {/* Row 1 — scrolling left */}
       <div className="relative mb-4 overflow-hidden">

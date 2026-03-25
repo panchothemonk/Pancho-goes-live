@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
 
 const videos = [
   { src: "/videos/pancho-p1.mp4", orientation: "portrait" as const },
@@ -10,7 +9,15 @@ const videos = [
   { src: "/videos/pancho-l2.mp4", orientation: "landscape" as const },
   { src: "/videos/pancho-p3.mp4", orientation: "portrait" as const },
   { src: "/videos/pancho-l3.mp4", orientation: "landscape" as const },
+  { src: "/videos/pancho-p4.mp4", orientation: "portrait" as const },
   { src: "/videos/pancho-l4.mp4", orientation: "landscape" as const },
+  { src: "/videos/pancho-p5.mp4", orientation: "portrait" as const },
+  { src: "/videos/pancho-l5.mp4", orientation: "landscape" as const },
+  { src: "/videos/pancho-p6.mp4", orientation: "portrait" as const },
+  { src: "/videos/pancho-l6.mp4", orientation: "landscape" as const },
+  { src: "/videos/pancho-p7.mp4", orientation: "portrait" as const },
+  { src: "/videos/pancho-l7.mp4", orientation: "landscape" as const },
+  { src: "/videos/pancho-p8.mp4", orientation: "portrait" as const },
 ];
 
 export default function VideoCarousel() {
@@ -20,11 +27,7 @@ export default function VideoCarousel() {
   );
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStartX = useRef(0);
-  const scrollStartX = useRef(0);
 
-  // Scroll to current video
   const scrollToVideo = useCallback((index: number) => {
     const container = containerRef.current;
     if (!container) return;
@@ -95,34 +98,10 @@ export default function VideoCarousel() {
     }
   };
 
-  // Touch/mouse drag for swipe
-  const handlePointerDown = (e: React.PointerEvent) => {
-    setIsDragging(true);
-    dragStartX.current = e.clientX;
-    scrollStartX.current = containerRef.current?.scrollLeft || 0;
-  };
-
-  const handlePointerMove = (e: React.PointerEvent) => {
-    if (!isDragging || !containerRef.current) return;
-    const dx = dragStartX.current - e.clientX;
-    containerRef.current.scrollLeft = scrollStartX.current + dx;
-  };
-
-  const handlePointerUp = () => {
-    setIsDragging(false);
-  };
-
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 fade-in-section">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
             world of pancho
           </span>
@@ -132,41 +111,37 @@ export default function VideoCarousel() {
           <p className="text-lg text-[#666] max-w-xl mx-auto">
             pancho has become a universal language. one viral moment at a time.
           </p>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Carousel */}
+      {/* Carousel — all cards same height */}
       <div
         ref={containerRef}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerLeave={handlePointerUp}
-        className="flex gap-4 overflow-x-auto px-6 pb-4 snap-x snap-mandatory scrollbar-hide cursor-grab active:cursor-grabbing"
+        className="flex gap-5 overflow-x-auto px-6 pb-4 snap-x snap-mandatory cursor-grab active:cursor-grabbing"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
           WebkitOverflowScrolling: "touch",
         }}
       >
-        {/* Left spacer to center first card */}
-        <div className="shrink-0 w-[calc(50vw-200px)] sm:w-[calc(50vw-240px)]" />
+        {/* Left spacer */}
+        <div className="shrink-0 w-[calc(50vw-180px)] sm:w-[calc(50vw-200px)]" />
 
         {videos.map((video, i) => {
           const isPortrait = video.orientation === "portrait";
           return (
-            <motion.div
+            <div
               key={i}
               data-video-card
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className={`shrink-0 snap-center relative rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] shadow-[6px_6px_0px_#1a1a1a] bg-[#1a1a1a] ${
+              className={`shrink-0 snap-center relative rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] shadow-[6px_6px_0px_#1a1a1a] bg-[#1a1a1a] h-[480px] sm:h-[560px] ${
                 isPortrait
-                  ? "w-[280px] sm:w-[320px] h-[500px] sm:h-[570px]"
-                  : "w-[380px] sm:w-[440px] h-[280px] sm:h-[320px]"
-              } ${i === current ? "scale-100" : "scale-[0.95] opacity-70"} transition-all duration-300`}
+                  ? "w-[270px] sm:w-[315px]"
+                  : "w-[430px] sm:w-[500px]"
+              } transition-all duration-500 ease-out ${
+                i === current
+                  ? "scale-100 opacity-100"
+                  : "scale-[0.92] opacity-50"
+              }`}
               onClick={() => {
                 setCurrent(i);
                 scrollToVideo(i);
@@ -206,14 +181,14 @@ export default function VideoCarousel() {
                 )}
               </button>
 
-              {/* Gradient overlay bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-            </motion.div>
+              {/* Gradient overlay */}
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+            </div>
           );
         })}
 
         {/* Right spacer */}
-        <div className="shrink-0 w-[calc(50vw-200px)] sm:w-[calc(50vw-240px)]" />
+        <div className="shrink-0 w-[calc(50vw-180px)] sm:w-[calc(50vw-200px)]" />
       </div>
 
       {/* Pagination dots */}
