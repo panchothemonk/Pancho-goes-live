@@ -132,8 +132,8 @@ export default function PFPStudio() {
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Preview — Left side */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative"
           >
@@ -214,8 +214,8 @@ export default function PFPStudio() {
 
           {/* Controls — Right side */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="space-y-8"
           >

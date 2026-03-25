@@ -9,8 +9,8 @@ export default function CTA() {
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         {/* Floating character */}
         <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.7 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-10"

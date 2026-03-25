@@ -11,7 +11,7 @@ const traits = [
   { emoji: "🌮", text: "tiny wins" },
   { emoji: "😴", text: "sin ganas" },
   { emoji: "🚀", text: "a la luna" },
-  { emoji: "🐵", text: "still vibing" },
+  { emoji: "🌮", text: "still vibing" },
 ];
 
 export default function About() {
@@ -30,15 +30,15 @@ export default function About() {
               {galleryImages.map((num, i) => (
                 <motion.div
                   key={num}
-                  initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{
                     delay: i * 0.08,
                     duration: 0.6,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  whileHover={{ scale: 1.1, rotate: Math.random() > 0.5 ? 3 : -3, zIndex: 10 }}
+                  whileHover={{ scale: 1.1, rotate: i % 2 === 0 ? 3 : -3, zIndex: 10 }}
                   className="aspect-square rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] bg-[#FFF8EC] group cursor-pointer relative shadow-[4px_4px_0px_#1a1a1a] hover:shadow-[6px_6px_0px_#1a1a1a] transition-all"
                 >
                   <Image
@@ -59,15 +59,15 @@ export default function About() {
               transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
               className="absolute -bottom-4 -right-4 px-5 py-3 rounded-2xl bg-[#FF3DB8] text-white font-black text-sm border-[3px] border-[#1a1a1a] shadow-[4px_4px_0px_#1a1a1a]"
             >
-              23+ VARIANTS 🐵
+              23+ VARIANTS 🌮
             </motion.div>
           </motion.div>
 
           {/* Content */}
           <div>
             <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block"
             >
@@ -81,7 +81,7 @@ export default function About() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 leading-[1.05] text-[#1a1a1a]"
             >
-              the degen monkey{" "}
+              the degen ape{" "}
               <span className="text-[#FF3DB8]">in all of us.</span>
             </motion.h2>
 
@@ -123,7 +123,7 @@ export default function About() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + i * 0.06 }}
-                  whileHover={{ scale: 1.1, rotate: Math.random() > 0.5 ? 3 : -3 }}
+                  whileHover={{ scale: 1.1, rotate: i % 2 === 0 ? 3 : -3 }}
                   className="brutal-tag cursor-default"
                 >
                   {trait.emoji} {trait.text}

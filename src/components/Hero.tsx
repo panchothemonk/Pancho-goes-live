@@ -10,7 +10,7 @@ const stats = [
   { value: "3s", label: "bump speed", icon: "⚡" },
   { value: "94%", label: "to winners", icon: "💰" },
   { value: "24/7", label: "no breaks", icon: "🌮" },
-  { value: "ok.", label: "pancho says", icon: "🐵" },
+  { value: "ok.", label: "pancho says", icon: "🌮" },
 ];
 
 export default function Hero() {
@@ -39,7 +39,7 @@ export default function Hero() {
             className="brutal-tag-pink mb-6 inline-flex"
           >
             <span className="w-2 h-2 rounded-full bg-[#FF3DB8] animate-pulse-soft" />
-            the degen monkey in all of us.
+            the degen ape in all of us.
           </motion.div>
 
           <div className="overflow-hidden mb-2">
@@ -154,9 +154,9 @@ export default function Hero() {
 
           {/* Floating tags */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
           >
             <motion.div
               animate={{ y: [-8, 8, -8] }}
@@ -167,16 +167,16 @@ export default function Hero() {
             </motion.div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4, duration: 0.6 }}
           >
             <motion.div
               animate={{ y: [6, -10, 6] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
               className="absolute bottom-24 left-0 sm:left-2 brutal-tag text-xs"
             >
-              degen approved 🐵
+              degen approved 🌮
             </motion.div>
           </motion.div>
           <motion.div

@@ -45,10 +45,10 @@ export default function TokenSection() {
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left: Revenue visual */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Big 50% */}
             <div className="text-center mb-8">
@@ -73,8 +73,8 @@ export default function TokenSection() {
               {revenueStreams.map((stream, i) => (
                 <motion.div
                   key={stream.source}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + i * 0.1 }}
                   className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10"
@@ -91,10 +91,10 @@ export default function TokenSection() {
 
           {/* Right: Token card + stats */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Token card */}
             <div className="relative p-8 rounded-3xl bg-white/5 border-[3px] border-[#FF3DB8] shadow-[6px_6px_0px_#FF3DB8] mb-8">

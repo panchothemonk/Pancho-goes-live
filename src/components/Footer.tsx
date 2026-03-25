@@ -42,7 +42,7 @@ export default function Footer() {
               <span className="text-xl font-black text-[#1a1a1a]">PANCHO</span>
             </div>
             <p className="text-sm text-[#999] leading-relaxed mb-4">
-              the degen monkey in all of us.
+              the degen ape in all of us.
               <br />
               sin ganas. still here.
             </p>

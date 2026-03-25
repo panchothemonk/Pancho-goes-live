@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "PANCHO — sin ganas. still here.",
   description:
-    "the degen monkey in all of us. from viral memes to real products — trading bots, prediction arenas, and a token that pays you back. the panchoverse is here.",
+    "the degen ape in all of us. from viral memes to real products — trading bots, prediction arenas, and a token that pays you back. the panchoverse is here.",
   icons: {
     icon: "/favicon.ico",
   },

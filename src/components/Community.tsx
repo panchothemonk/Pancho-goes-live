@@ -102,19 +102,18 @@ export default function Community() {
             {panchoFaces.map((num, i) => (
               <motion.div
                 key={num}
-                initial={{ opacity: 0, scale: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{
-                  delay: 0.3 + i * 0.06,
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20,
+                  delay: 0.2 + i * 0.04,
+                  duration: 0.5,
+                  ease: [0.16, 1, 0.3, 1],
                 }}
                 whileHover={{
                   scale: 1.3,
                   zIndex: 10,
-                  rotate: Math.random() > 0.5 ? 10 : -10,
+                  rotate: i % 2 === 0 ? 10 : -10,
                 }}
                 className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden border-[3px] border-[#1a1a1a] hover:border-[#FF3DB8] transition-all cursor-pointer relative shadow-[3px_3px_0px_#1a1a1a]"
               >

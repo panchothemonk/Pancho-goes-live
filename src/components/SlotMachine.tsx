@@ -259,7 +259,7 @@ export default function SlotMachine() {
                     transition={{ duration: 0.5, repeat: 3 }}
                     className="text-3xl sm:text-5xl font-black text-white"
                   >
-                    🐵 TRIPLE PANCHO! 🐵
+                    🌮 TRIPLE PANCHO! 🌮
                   </motion.div>
                   <p className="text-white/80 text-sm mt-2 font-bold">
                     degen approved. ok.

@@ -13,6 +13,7 @@ import TokenSection from "@/components/TokenSection";
 import SlotMachine from "@/components/SlotMachine";
 import Community from "@/components/Community";
 import CTA from "@/components/CTA";
+import VideoCarousel from "@/components/VideoCarousel";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -44,12 +45,13 @@ export default function Home() {
       <SplashScreen onComplete={handleSplashComplete} />
       {splashDone && (
         <div
-          className={`transition-opacity duration-500 ${ready ? "opacity-100" : "opacity-0"}`}
+          className={`transition-opacity duration-700 ease-out ${ready ? "opacity-100" : "opacity-0"}`}
         >
           <Navbar />
           <Hero />
           <Marquee />
           <About />
+          <VideoCarousel />
           <ScrollingFaces />
           <Ecosystem />
           <PFPStudio />
