@@ -5,48 +5,50 @@ import Image from "next/image";
 
 const products = [
   {
-    title: "Pancho Studio",
-    desc: "Generate your own unique Pancho PFP. 183+ character variants with custom backgrounds, vibes, and export formats for every platform.",
-    link: "https://panchoverse.com",
+    title: "pancho fun bot",
+    desc: "the only pump.fun bot with a full web trading terminal. 100-point token scoring, whale tracking, live charts, auto take-profit, and a moonshots feed. all inside telegram.",
+    link: "https://fun.panchoverse.com",
     image: "/images/pancho/pancho-4.png",
-    tag: "PFP GENERATOR",
-    color: "#ff2244",
-    emoji: "🎨",
+    tag: "TRADING BOT",
+    color: "#14F195",
+    features: ["< 1s entry", "whale tracker", "auto TP", "copy trading"],
+    tagline: "pancho trades. you profit.",
   },
   {
-    title: "Degen Arena",
-    desc: "Bull/Bear PvP prediction market on Solana. Stake SOL, predict price direction, and winners take the pool.",
+    title: "pancho degen arena",
+    desc: "bull or bear. three minutes. real SOL. on-chain. no house edge. losers pay winners. 94% of the pool goes to the winning side.",
     link: "https://arena.panchoverse.com",
     image: "/images/pancho/pancho-10.png",
     tag: "PREDICTION MARKET",
-    color: "#ff6b2b",
-    emoji: "⚔️",
+    color: "#FFB800",
+    features: ["3min rounds", "on-chain", "94% to winners", "rooms live"],
+    tagline: "pick a side. win the pool.",
   },
   {
-    title: "Meme Generator",
-    desc: "Create viral Pancho memes with Spanglish crypto humor. Bull, Bear, and Degen modes from Mild to Unhinged.",
-    link: "https://fun.panchoverse.com",
+    title: "pancho hits bot",
+    desc: "your token needs volume. pancho hits it every 3 seconds. buys. sells. bumps to the top on pump.fun trending. you just watch.",
+    link: "https://hit.panchoverse.com",
     image: "/images/pancho/pancho-12.png",
-    tag: "MEME FACTORY",
-    color: "var(--accent)",
-    emoji: "🤣",
+    tag: "BUMP BOT",
+    color: "#FF3DB8",
+    features: ["3s bumps", "0.02 SOL/cycle", "free trial", "24/7"],
+    tagline: "it bumps. you don't.",
   },
   {
-    title: "Game Arena",
-    desc: "Enter the Pancho gaming universe. Compete, earn, and prove you're the biggest degen in the arena.",
-    link: "https://gamearena.panchoverse.com",
-    image: "/images/pancho/pancho-1.png",
-    tag: "GAMING",
-    color: "var(--accent-purple)",
-    emoji: "🎮",
+    title: "arena rooms",
+    desc: "launch a prediction arena for your community. any pump.fun or migrated token. 3-minute rounds. users bet bull or bear on YOUR token's price.",
+    link: "https://arena.panchoverse.com",
+    image: "/images/pancho/pancho-15.png",
+    tag: "COMMUNITY ARENAS",
+    color: "#8B5CF6",
+    features: ["any token", "0.25 SOL setup", "instant live", "your community"],
+    tagline: "your token. your arena.",
   },
 ];
 
 export default function Ecosystem() {
   return (
-    <section id="ecosystem" className="relative py-32 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#ff2244] opacity-[0.02] blur-[250px]" />
-
+    <section id="products" className="relative py-24 sm:py-32 overflow-hidden bg-[#FFF8EC]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -56,15 +58,16 @@ export default function Ecosystem() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-20"
         >
-          <span className="text-sm font-bold tracking-[0.2em] uppercase text-[var(--accent)] mb-4 block">
-            Ecosystem
+          <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
+            products
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-tight">
-            The <span className="text-gradient">Panchoverse</span> Empire
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-tight text-[#1a1a1a]">
+            cooking with{" "}
+            <span className="text-[#FF3DB8]">pancho.</span>
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-            More than memes. Real products, real infrastructure, real chaos.
-            Every product powers the ecosystem and fuels the mission.
+          <p className="text-lg text-[#666] max-w-2xl mx-auto leading-relaxed">
+            a closer look at pancho&apos;s ecosystem. real products. real infrastructure.
+            not just memes — though those are pretty good too.
           </p>
         </motion.div>
 
@@ -84,29 +87,8 @@ export default function Ecosystem() {
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              whileHover={{ y: -6 }}
-              className="group relative p-8 rounded-3xl glass overflow-hidden cursor-pointer"
+              className="group brutal-card p-8 cursor-pointer"
             >
-              {/* Top accent bar */}
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.12, duration: 0.6 }}
-                className="absolute top-0 left-0 right-0 h-[2px] origin-left"
-                style={{
-                  background: `linear-gradient(90deg, ${product.color}, transparent)`,
-                }}
-              />
-
-              {/* Hover gradient */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                style={{
-                  background: `radial-gradient(circle at 80% 80%, ${product.color}12, transparent 60%)`,
-                }}
-              />
-
               <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
                 {/* Character */}
                 <motion.div
@@ -118,41 +100,52 @@ export default function Ecosystem() {
                     src={product.image}
                     alt={product.title}
                     fill
-                    className="object-contain transition-all duration-500"
-                    style={{
-                      filter: `drop-shadow(0 0 30px ${product.color}40)`,
-                    }}
+                    className="object-contain sticker"
                   />
                 </motion.div>
 
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
+                  {/* Tag */}
+                  <div className="flex items-center gap-3 mb-3">
                     <span
-                      className="text-[10px] font-black tracking-[0.15em] px-3 py-1.5 rounded-full"
-                      style={{ color: product.color, background: `${product.color}12` }}
+                      className="text-[10px] font-black tracking-[0.15em] px-3 py-1.5 rounded-full border-2"
+                      style={{
+                        color: product.color,
+                        borderColor: product.color,
+                        background: `${product.color}15`,
+                      }}
                     >
                       {product.tag}
                     </span>
-                    <span className="text-lg">{product.emoji}</span>
                   </div>
-                  <h3 className="text-2xl font-black mb-2 group-hover:text-white transition-colors">
+
+                  <h3 className="text-2xl font-black mb-1 text-[#1a1a1a] group-hover:text-[#FF3DB8] transition-colors">
                     {product.title}
                   </h3>
-                  <p className="text-zinc-400 leading-relaxed text-sm mb-4">
+                  <p className="text-xs font-bold text-[#999] italic mb-3">
+                    &quot;{product.tagline}&quot;
+                  </p>
+                  <p className="text-[#666] leading-relaxed text-sm mb-4">
                     {product.desc}
                   </p>
+
+                  {/* Feature chips */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {product.features.map((f) => (
+                      <span
+                        key={f}
+                        className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-[#F5F0E8] border border-[#e0e0e0] text-[#666]"
+                      >
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+
                   <div
-                    className="flex items-center gap-2 text-sm font-bold"
+                    className="flex items-center gap-2 text-sm font-black"
                     style={{ color: product.color }}
                   >
-                    <span>Explore</span>
-                    <motion.svg
-                      whileHover={{ x: 4 }}
-                      width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
-                      className="group-hover:translate-x-1 transition-transform"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </motion.svg>
+                    <span>explore →</span>
                   </div>
                 </div>
               </div>

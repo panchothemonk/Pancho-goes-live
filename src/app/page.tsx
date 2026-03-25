@@ -4,12 +4,12 @@ import { useState, useCallback } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Community from "@/components/Community";
-import Ecosystem from "@/components/Ecosystem";
-import SlotMachine from "@/components/SlotMachine";
 import Marquee from "@/components/Marquee";
-import Merch from "@/components/Merch";
+import About from "@/components/About";
+import Ecosystem from "@/components/Ecosystem";
+import TokenSection from "@/components/TokenSection";
+import SlotMachine from "@/components/SlotMachine";
+import Community from "@/components/Community";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -21,22 +21,22 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className="noise">
       <SplashScreen onComplete={handleSplashComplete} />
       {splashDone && (
         <>
           <Navbar />
           <Hero />
-          <About />
-          <Community />
-          <Ecosystem />
-          <SlotMachine />
           <Marquee />
-          <Merch />
+          <About />
+          <Ecosystem />
+          <TokenSection />
+          <SlotMachine />
+          <Community />
           <CTA />
           <Footer />
         </>
       )}
-    </>
+    </div>
   );
 }

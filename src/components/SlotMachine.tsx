@@ -13,7 +13,7 @@ function getRandomPancho() {
 
 // Confetti particle component
 function Confetti({ count }: { count: number }) {
-  const colors = ["#ff2244", "#ff6b2b", "#00ff88", "#a855f7", "#ffdd00", "#ff44aa", "#00ddff"];
+  const colors = ["#FF3DB8", "#FFB800", "#14F195", "#8B5CF6", "#FF4444", "#1a1a1a"];
   const particles = Array.from({ length: count }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
@@ -81,12 +81,10 @@ function Reel({
 
   useEffect(() => {
     if (spinning) {
-      // Rapid cycling
       intervalRef.current = setInterval(() => {
         setDisplayImages([getRandomPancho()]);
       }, 80);
 
-      // Stop after staggered delay
       timeoutRef.current = setTimeout(() => {
         if (intervalRef.current) clearInterval(intervalRef.current);
         setDisplayImages([target]);
@@ -101,16 +99,13 @@ function Reel({
   }, [spinning, target, index, onStop]);
 
   return (
-    <div className="relative w-24 h-28 sm:w-32 sm:h-36 md:w-36 md:h-40 rounded-2xl overflow-hidden bg-black/60 border border-white/10 flex items-center justify-center">
-      {/* Inner glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ff2244]/5 via-transparent to-[#ff2244]/5" />
-
+    <div className="relative w-24 h-28 sm:w-32 sm:h-36 md:w-36 md:h-40 rounded-2xl overflow-hidden bg-[#FFF8EC] border-[3px] border-[#1a1a1a] shadow-[4px_4px_0px_#1a1a1a] flex items-center justify-center">
       {/* Scan line effect when spinning */}
       {spinning && (
         <motion.div
           animate={{ y: [-40, 160, -40] }}
           transition={{ duration: 0.3, repeat: Infinity, ease: "linear" }}
-          className="absolute left-0 right-0 h-8 bg-gradient-to-b from-transparent via-[#ff2244]/10 to-transparent z-10"
+          className="absolute left-0 right-0 h-8 bg-gradient-to-b from-transparent via-[#FF3DB8]/15 to-transparent z-10"
         />
       )}
 
@@ -129,16 +124,14 @@ function Reel({
             fill
             className="object-contain"
             style={{
-              filter: spinning
-                ? "blur(1px)"
-                : "drop-shadow(0 0 20px rgba(255,34,68,0.4))",
+              filter: spinning ? "blur(1px)" : "none",
             }}
           />
         </motion.div>
       </AnimatePresence>
 
       {/* Reel number */}
-      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[8px] text-zinc-600 font-mono">
+      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[8px] text-[#999] font-black">
         REEL {index + 1}
       </div>
     </div>
@@ -159,7 +152,6 @@ export default function SlotMachine() {
 
     const r1 = getRandomPancho();
     const r2 = getRandomPancho();
-    // 1 in 5 chance of triple match for fun
     const isWin = Math.random() < 0.2;
     const r3 = isWin ? r1 : getRandomPancho();
     const finalR2 = isWin ? r1 : r2;
@@ -176,7 +168,6 @@ export default function SlotMachine() {
     setStoppedReels((prev) => {
       const next = prev + 1;
       if (next >= 3) {
-        // Check for match after all reels stop
         setTimeout(() => {
           setSpinning(false);
           const matched = results[0] === results[1] && results[1] === results[2];
@@ -193,10 +184,8 @@ export default function SlotMachine() {
   }, [results]);
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-24 sm:py-32 overflow-hidden">
       {showConfetti && <Confetti count={150} />}
-
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#ff6b2b] opacity-[0.03] blur-[200px]" />
 
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
@@ -207,14 +196,14 @@ export default function SlotMachine() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-12"
         >
-          <span className="text-sm font-bold tracking-[0.2em] uppercase text-[#ff6b2b] mb-4 block">
-            Try Your Luck
+          <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FFB800] mb-4 block">
+            try your luck
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-4 leading-tight">
-            Pancho <span className="text-gradient">Slots</span> 🎰
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-4 leading-tight text-[#1a1a1a]">
+            pancho <span className="text-[#FF3DB8]">slots</span> 🎰
           </h2>
-          <p className="text-lg text-zinc-400 max-w-xl mx-auto">
-            Spin the reels. Match three Panchos. Go absolutely wild.
+          <p className="text-lg text-[#666] max-w-xl mx-auto">
+            spin the reels. match three panchos. go absolutely wild. ok.
           </p>
         </motion.div>
 
@@ -226,19 +215,19 @@ export default function SlotMachine() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
-          {/* Machine frame */}
-          <div className="relative p-8 sm:p-10 rounded-[32px] bg-gradient-to-b from-[#111] to-[#0a0a0a] border border-white/[0.06] shadow-[0_0_80px_rgba(255,34,68,0.08),inset_0_1px_0_rgba(255,255,255,0.05)]">
+          {/* Machine frame — brutal style */}
+          <div className="relative p-8 sm:p-10 rounded-[24px] bg-white border-[3px] border-[#1a1a1a] shadow-[8px_8px_0px_#1a1a1a]">
             {/* Top bar */}
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-[#ff2244] shadow-[0_0_10px_#ff2244]" />
-                <span className="text-xs font-bold text-zinc-500 tracking-wider uppercase">
-                  Pancho Slots Machine
+                <div className="w-3 h-3 rounded-full bg-[#FF3DB8] border-2 border-[#1a1a1a]" />
+                <span className="text-xs font-black text-[#1a1a1a] tracking-wider uppercase">
+                  pancho slots machine
                 </span>
               </div>
-              <div className="flex items-center gap-4 text-xs font-mono text-zinc-600">
-                <span>SPINS: <span className="text-[#ff6b2b]">{spins}</span></span>
-                <span>WINS: <span className="text-[var(--accent)]">{wins}</span></span>
+              <div className="flex items-center gap-4 text-xs font-black text-[#999]">
+                <span>SPINS: <span className="text-[#FF3DB8]">{spins}</span></span>
+                <span>WINS: <span className="text-[#14F195]">{wins}</span></span>
               </div>
             </div>
 
@@ -263,7 +252,7 @@ export default function SlotMachine() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                  className="absolute inset-x-8 top-1/2 -translate-y-1/2 py-6 rounded-2xl bg-gradient-to-r from-[#ff2244] to-[#ff6b2b] text-center z-20 shadow-[0_0_80px_rgba(255,34,68,0.5)]"
+                  className="absolute inset-x-8 top-1/2 -translate-y-1/2 py-6 rounded-2xl bg-[#FF3DB8] border-[3px] border-[#1a1a1a] text-center z-20 shadow-[6px_6px_0px_#1a1a1a]"
                 >
                   <motion.div
                     animate={{ scale: [1, 1.1, 1] }}
@@ -272,8 +261,8 @@ export default function SlotMachine() {
                   >
                     🐵 TRIPLE PANCHO! 🐵
                   </motion.div>
-                  <p className="text-white/80 text-sm mt-2 font-semibold">
-                    ABSOLUTE DEGEN ENERGY 🔥
+                  <p className="text-white/80 text-sm mt-2 font-bold">
+                    degen approved. ok.
                   </p>
                 </motion.div>
               )}
@@ -286,44 +275,21 @@ export default function SlotMachine() {
                 disabled={spinning}
                 whileHover={{ scale: spinning ? 1 : 1.05 }}
                 whileTap={{ scale: spinning ? 1 : 0.95 }}
-                className={`relative px-12 py-5 rounded-full font-black text-xl overflow-hidden transition-all duration-300 ${
-                  spinning
-                    ? "bg-zinc-800 text-zinc-500 cursor-not-allowed"
-                    : "bg-gradient-to-r from-[#ff2244] to-[#ff6b2b] text-white hover:shadow-[0_0_60px_rgba(255,34,68,0.4)] cursor-pointer"
+                className={`brutal-btn-pink text-xl !px-12 !py-5 ${
+                  spinning ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
-                <span className="relative z-10">
-                  {spinning ? (
-                    <motion.span
-                      animate={{ opacity: [1, 0.5, 1] }}
-                      transition={{ duration: 0.8, repeat: Infinity }}
-                    >
-                      SPINNING...
-                    </motion.span>
-                  ) : (
-                    "🎰 SPIN THE REELS"
-                  )}
-                </span>
-                {!spinning && (
-                  <motion.div
-                    className="absolute inset-0 bg-white"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 0.15 }}
-                  />
+                {spinning ? (
+                  <motion.span
+                    animate={{ opacity: [1, 0.5, 1] }}
+                    transition={{ duration: 0.8, repeat: Infinity }}
+                  >
+                    SPINNING...
+                  </motion.span>
+                ) : (
+                  "🎰 SPIN THE REELS"
                 )}
               </motion.button>
-            </div>
-
-            {/* Bottom decorative dots */}
-            <div className="flex justify-center gap-2 mt-6">
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  animate={spinning ? { opacity: [0.3, 1, 0.3] } : { opacity: 0.3 }}
-                  transition={{ duration: 0.5, repeat: spinning ? Infinity : 0, delay: i * 0.1 }}
-                  className="w-2 h-2 rounded-full bg-[#ff2244]"
-                />
-              ))}
             </div>
           </div>
         </motion.div>
