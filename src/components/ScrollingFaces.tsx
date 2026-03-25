@@ -38,7 +38,7 @@ export default function ScrollingFaces() {
             >
               <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] bg-[#FFB800] shadow-[4px_4px_0px_#1a1a1a] hover:scale-110 hover:rotate-[-3deg] transition-transform cursor-pointer">
                 <Image
-                  src={`/images/pancho/pancho-${num}.png`}
+                  src={`/images/pancho/pancho-${num}.webp`}
                   alt={`Pancho ${num}`}
                   width={176}
                   height={176}
@@ -60,7 +60,7 @@ export default function ScrollingFaces() {
             >
               <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] bg-[#FFB800] shadow-[4px_4px_0px_#1a1a1a] hover:scale-110 hover:rotate-[3deg] transition-transform cursor-pointer">
                 <Image
-                  src={`/images/pancho/pancho-${num}.png`}
+                  src={`/images/pancho/pancho-${num}.webp`}
                   alt={`Pancho ${num}`}
                   width={176}
                   height={176}

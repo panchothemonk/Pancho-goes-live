@@ -141,7 +141,7 @@ export default function Hero() {
             {heroImages.map((num, i) => (
               <Image
                 key={num}
-                src={`/images/pancho/pancho-${num}.png`}
+                src={`/images/pancho/pancho-${num}.webp`}
                 alt="Pancho"
                 fill
                 className={`object-contain transition-opacity duration-700 sticker ${

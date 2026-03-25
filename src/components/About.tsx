@@ -42,7 +42,7 @@ export default function About() {
                   className="aspect-square rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] bg-[#FFF8EC] group cursor-pointer relative shadow-[4px_4px_0px_#1a1a1a] hover:shadow-[6px_6px_0px_#1a1a1a] transition-all"
                 >
                   <Image
-                    src={`/images/pancho/pancho-${num}.png`}
+                    src={`/images/pancho/pancho-${num}.webp`}
                     alt={`Pancho variant ${num}`}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"

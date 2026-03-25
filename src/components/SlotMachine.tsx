@@ -119,7 +119,7 @@ function Reel({
           className="relative w-20 h-24 sm:w-26 sm:h-30 md:w-28 md:h-32"
         >
           <Image
-            src={`/images/pancho/pancho-${displayImages[0]}.png`}
+            src={`/images/pancho/pancho-${displayImages[0]}.webp`}
             alt="Pancho"
             fill
             className="object-contain"

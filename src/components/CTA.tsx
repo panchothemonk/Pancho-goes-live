@@ -17,7 +17,7 @@ export default function CTA() {
         >
           <div className="relative w-40 h-48 mx-auto animate-float">
             <Image
-              src="/images/pancho/pancho-8.png"
+              src="/images/pancho/pancho-8.webp"
               alt="Pancho"
               fill
               className="object-contain sticker"

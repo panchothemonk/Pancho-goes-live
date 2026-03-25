@@ -47,7 +47,7 @@ export default function SplashScreen({
             className="relative w-32 h-32 sm:w-40 sm:h-40 mb-8"
           >
             <Image
-              src="/images/pancho/pancho-1.png"
+              src="/images/pancho/pancho-1.webp"
               alt="Pancho"
               fill
               className="object-contain sticker"

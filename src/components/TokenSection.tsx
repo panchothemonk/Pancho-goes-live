@@ -101,7 +101,7 @@ export default function TokenSection() {
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-[3px] border-[#FF3DB8]">
                   <Image
-                    src="/images/pancho/pancho-1.png"
+                    src="/images/pancho/pancho-1.webp"
                     alt="Pancho"
                     fill
                     className="object-cover"

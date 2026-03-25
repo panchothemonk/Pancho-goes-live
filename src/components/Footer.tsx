@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full overflow-hidden border-[2px] border-[#1a1a1a]">
                 <Image
-                  src="/images/pancho/pancho-1.png"
+                  src="/images/pancho/pancho-1.webp"
                   alt="Pancho"
                   width={40}
                   height={40}

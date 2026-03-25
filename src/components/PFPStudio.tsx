@@ -97,11 +97,11 @@ export default function PFPStudio() {
 
       // Download
       const link = document.createElement("a");
-      link.download = `pancho-pfp-${selectedPancho}.png`;
+      link.download = `pancho-pfp-${selectedPancho}.webp`;
       link.href = canvas.toDataURL("image/png");
       link.click();
     };
-    img.src = `/images/pancho/pancho-${selectedPancho}.png`;
+    img.src = `/images/pancho/pancho-${selectedPancho}.webp`;
   }, [selectedPancho, selectedMood, selectedBg]);
 
   return (
@@ -172,7 +172,7 @@ export default function PFPStudio() {
                 >
                   <div className="relative w-full h-full">
                     <Image
-                      src={`/images/pancho/pancho-${selectedPancho}.png`}
+                      src={`/images/pancho/pancho-${selectedPancho}.webp`}
                       alt="Pancho PFP"
                       fill
                       className="object-contain"
@@ -238,7 +238,7 @@ export default function PFPStudio() {
                     }`}
                   >
                     <Image
-                      src={`/images/pancho/pancho-${num}.png`}
+                      src={`/images/pancho/pancho-${num}.webp`}
                       alt={`Pancho ${num}`}
                       width={64}
                       height={64}
