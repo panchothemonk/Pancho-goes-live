@@ -30,55 +30,26 @@ export default function Hero() {
       <div className="absolute bottom-20 left-[15%] w-80 h-80 rounded-full bg-[#FFB800] opacity-[0.08] blur-[120px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-        {/* Text Side */}
+        {/* Text Side — no entrance animations, just visible */}
         <div className="flex-1 text-center lg:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.05 }}
-            className="brutal-tag-pink mb-6 inline-flex"
-          >
+          <div className="brutal-tag-pink mb-6 inline-flex">
             <span className="w-2 h-2 rounded-full bg-[#FF3DB8] animate-pulse-soft" />
             the degen ape in all of us.
-          </motion.div>
-
-          <div className="overflow-hidden mb-2">
-            <motion.h1
-              initial={{ y: 100 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#1a1a1a]"
-            >
-              meet
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden mb-2">
-            <motion.h1
-              initial={{ y: 100 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#FF3DB8]"
-            >
-              pancho.
-            </motion.h1>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="text-lg sm:text-xl text-[#666] max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed"
-          >
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#1a1a1a] mb-2">
+            meet
+          </h1>
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#FF3DB8] mb-6">
+            pancho.
+          </h1>
+
+          <p className="text-lg sm:text-xl text-[#666] max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
             good days. bad days. same pancho. from viral memes to real products —
             the panchoverse is building a legacy one &quot;ok.&quot; at a time.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.35 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="https://panchoverse.com"
               target="_blank"
@@ -96,39 +67,22 @@ export default function Hero() {
             <a href="#about" className="brutal-btn-outline">
               who is pancho?
             </a>
-          </motion.div>
+          </div>
 
           {/* Stats Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="grid grid-cols-4 gap-3 mt-10"
-          >
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.45 + i * 0.05 }}
-                className="text-center"
-              >
+          <div className="grid grid-cols-4 gap-3 mt-10">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
                 <span className="text-lg">{stat.icon}</span>
                 <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">{stat.value}</div>
                 <div className="text-xs text-[#999] font-medium">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
-        {/* Hero Character */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="flex-1 relative flex items-center justify-center"
-        >
-          {/* Character background circle */}
+        {/* Hero Character — only keep continuous animations */}
+        <div className="flex-1 relative flex items-center justify-center">
           <div className="absolute w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] rounded-full border-[3px] border-[#1a1a1a] bg-[#FFF8EC]" />
           <motion.div
             animate={{ rotate: 360 }}
@@ -136,7 +90,6 @@ export default function Hero() {
             className="absolute w-[340px] h-[340px] sm:w-[470px] sm:h-[470px] rounded-full border-[2px] border-dashed border-[#e0e0e0]"
           />
 
-          {/* Character with crossfade */}
           <div className="relative w-[260px] h-[360px] sm:w-[340px] sm:h-[470px] animate-float z-10">
             {heroImages.map((num, i) => (
               <Image
@@ -152,50 +105,31 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Floating tags */}
+          {/* Floating tags — continuous only */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
+            animate={{ y: [-8, 8, -8] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-8 right-0 sm:right-4 brutal-tag-pink text-xs"
           >
-            <motion.div
-              animate={{ y: [-8, 8, -8] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-8 right-0 sm:right-4 brutal-tag-pink text-xs"
-            >
-              sin ganas 🌮
-            </motion.div>
+            sin ganas 🌮
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.55, duration: 0.4 }}
+            animate={{ y: [6, -10, 6] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-24 left-0 sm:left-2 brutal-tag text-xs"
           >
-            <motion.div
-              animate={{ y: [6, -10, 6] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-24 left-0 sm:left-2 brutal-tag text-xs"
-            >
-              degen approved 🌮
-            </motion.div>
+            degen approved 🌮
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            animate={{ y: [-5, 10, -5], x: [-3, 3, -3] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/2 -left-6 sm:-left-12 brutal-tag text-xs"
           >
-            <motion.div
-              animate={{ y: [-5, 10, -5], x: [-3, 3, -3] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-1/2 -left-6 sm:-left-12 brutal-tag text-xs"
-            >
-              SOLANA ◎
-            </motion.div>
+            SOLANA ◎
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Bottom divider */}
       <div className="absolute bottom-0 left-0 right-0 section-divider" />
     </section>
   );

@@ -18,16 +18,9 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   const [splashDone, setSplashDone] = useState(false);
-  const [ready, setReady] = useState(false);
 
   const handleSplashComplete = useCallback(() => {
     setSplashDone(true);
-    // Small delay so the browser can paint before animations start
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setReady(true);
-      });
-    });
   }, []);
 
   // Preload critical hero images during splash
@@ -44,9 +37,7 @@ export default function Home() {
     <div>
       <SplashScreen onComplete={handleSplashComplete} />
       {splashDone && (
-        <div
-          className={`transition-opacity duration-700 ease-out ${ready ? "opacity-100" : "opacity-0"}`}
-        >
+        <div>
           <Navbar />
           <Hero />
           <Marquee />
