@@ -89,6 +89,11 @@ export default function Community() {
                   zIndex: 10,
                   rotate: i % 2 === 0 ? 10 : -10,
                 }}
+                whileTap={{
+                  scale: 1.3,
+                  zIndex: 10,
+                  rotate: i % 2 === 0 ? 10 : -10,
+                }}
                 className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden border-[3px] border-[#1a1a1a] hover:border-[#FF3DB8] transition-all cursor-pointer relative shadow-[3px_3px_0px_#1a1a1a]"
               >
                 <Image

@@ -79,6 +79,7 @@ export default function Ecosystem() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
                 <motion.div
                   whileHover={{ rotate: [0, -5, 5, 0], scale: 1.1 }}
+                  whileTap={{ rotate: [0, -5, 5, 0], scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                   className="relative w-24 h-32 sm:w-28 sm:h-36 shrink-0"
                 >

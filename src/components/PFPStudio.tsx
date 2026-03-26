@@ -281,7 +281,7 @@ export default function PFPStudio() {
                     key={num}
                     onClick={() => { setSelectedPancho(num); setIsGenerated(false); }}
                     whileHover={{ scale: 1.15, rotate: -5 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileTap={{ scale: 1.15, rotate: -5 }}
                     className={`aspect-square rounded-xl overflow-hidden border-[2px] transition-all cursor-pointer ${
                       selectedPancho === num
                         ? "border-[#FF3DB8] shadow-[3px_3px_0px_#FF3DB8] scale-105"
@@ -312,7 +312,7 @@ export default function PFPStudio() {
                     key={mood.name}
                     onClick={() => { setSelectedMood(i); setIsGenerated(false); }}
                     whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileTap={{ scale: 1.05 }}
                     className={`brutal-tag cursor-pointer transition-all ${
                       selectedMood === i
                         ? "!bg-[#FF3DB8] !text-white !border-[#1a1a1a]"
@@ -336,7 +336,7 @@ export default function PFPStudio() {
                     key={bg.name}
                     onClick={() => { setSelectedBg(i); setIsGenerated(false); }}
                     whileHover={{ scale: 1.15 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileTap={{ scale: 1.15 }}
                     className={`w-10 h-10 rounded-full border-[3px] cursor-pointer transition-all ${
                       selectedBg === i
                         ? "border-[#1a1a1a] shadow-[3px_3px_0px_#1a1a1a] scale-110"

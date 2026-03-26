@@ -27,6 +27,7 @@ export default function About() {
                 <motion.div
                   key={num}
                   whileHover={{ scale: 1.08, rotate: i % 2 === 0 ? 2 : -2, zIndex: 10 }}
+                  whileTap={{ scale: 1.08, rotate: i % 2 === 0 ? 2 : -2, zIndex: 10 }}
                   className="aspect-square rounded-2xl overflow-hidden border-[3px] border-[#1a1a1a] bg-[#FFF8EC] group cursor-pointer relative shadow-[4px_4px_0px_#1a1a1a] hover:shadow-[6px_6px_0px_#1a1a1a] transition-shadow"
                 >
                   <Image
@@ -79,6 +80,7 @@ export default function About() {
                 <motion.span
                   key={trait.text}
                   whileHover={{ scale: 1.1, rotate: 3 }}
+                  whileTap={{ scale: 1.1, rotate: 3 }}
                   className="brutal-tag cursor-default"
                 >
                   {trait.emoji} {trait.text}
