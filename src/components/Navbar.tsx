@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Products", href: "#products" },
+  { label: "Tools", href: "#products" },
   { label: "Token", href: "#token" },
   { label: "Community", href: "#community" },
 ];
@@ -108,7 +108,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://arena.panchoverse.com"
+            href="https://gamearena.panchoverse.com"
             target="_blank"
             rel="noopener noreferrer"
             className="brutal-btn-pink text-sm !py-2.5 !px-5"
@@ -161,7 +161,7 @@ export default function Navbar() {
                 ))}
               </div>
               <a
-                href="https://arena.panchoverse.com"
+                href="https://gamearena.panchoverse.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="brutal-btn-pink text-center mt-2"

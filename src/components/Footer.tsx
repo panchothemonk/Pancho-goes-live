@@ -5,14 +5,14 @@ import Image from "next/image";
 const footerLinks = {
   Navigate: [
     { label: "About", href: "#about" },
-    { label: "Products", href: "#products" },
+    { label: "Tools", href: "#products" },
     { label: "Token", href: "#token" },
     { label: "Community", href: "#community" },
   ],
   Panchoverse: [
-    { label: "Panchoverse", href: "https://panchoverse.com" },
+    { label: "Home", href: "#" },
     { label: "Fun Bot", href: "https://fun.panchoverse.com" },
-    { label: "Degen Arena", href: "https://arena.panchoverse.com" },
+    { label: "Degen Arena", href: "https://gamearena.panchoverse.com" },
     { label: "Hits Bot", href: "https://hit.panchoverse.com" },
   ],
   Social: [

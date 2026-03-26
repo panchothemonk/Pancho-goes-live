@@ -18,7 +18,7 @@ const products = [
   {
     title: "pancho degen arena",
     desc: "bull or bear. three minutes. real SOL. on-chain. no house edge. losers pay winners. 94% of the pool goes to the winning side.",
-    link: "https://arena.panchoverse.com",
+    link: "https://gamearena.panchoverse.com",
     image: "/images/pancho/pancho-10.webp",
     tag: "PREDICTION MARKET",
     color: "#FFB800",
@@ -38,7 +38,7 @@ const products = [
   {
     title: "arena rooms",
     desc: "launch a prediction arena for your community. any pump.fun or migrated token. 3-minute rounds. users bet bull or bear on YOUR token's price.",
-    link: "https://arena.panchoverse.com",
+    link: "https://gamearena.panchoverse.com",
     image: "/images/pancho/pancho-15.webp",
     tag: "COMMUNITY ARENAS",
     color: "#8B5CF6",
@@ -54,15 +54,15 @@ export default function Ecosystem() {
         {/* Header */}
         <div className="text-center mb-20">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
-            products
+            the kitchen
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-tight text-[#1a1a1a]">
-            cooking with{" "}
-            <span className="text-[#FF3DB8]">pancho.</span>
+            pancho built{" "}
+            <span className="text-[#FF3DB8]">all this.</span>
           </h2>
           <p className="text-lg text-[#666] max-w-2xl mx-auto leading-relaxed">
-            a closer look at pancho&apos;s ecosystem. real products. real infrastructure.
-            not just memes — though those are pretty good too.
+            four tools. all live. all on solana. all making money.
+            pancho said &quot;ok&quot; and accidentally built an ecosystem.
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export default function Ecosystem() {
                     className="flex items-center gap-2 text-sm font-black"
                     style={{ color: product.color }}
                   >
-                    <span>explore →</span>
+                    <span>lfg →</span>
                   </div>
                 </div>
               </div>

@@ -130,13 +130,13 @@ export default function VideoCarousel() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
-            world of pancho
+            pancho tv
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-4 leading-tight text-[#1a1a1a]">
-            meet <span className="text-[#FF3DB8]">pancho.</span>
+            the <span className="text-[#FF3DB8]">content.</span>
           </h2>
           <p className="text-lg text-[#666] max-w-xl mx-auto">
-            one viral moment at a time.
+            pancho goes viral. pancho doesn&apos;t care. scroll through anyway.
           </p>
         </div>
       </div>

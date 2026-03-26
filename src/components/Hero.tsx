@@ -45,18 +45,19 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg sm:text-xl text-[#666] max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
-            good days. bad days. same pancho. from viral memes to real products —
-            the panchoverse is building a legacy one &quot;ok.&quot; at a time.
+            woke up. checked chart. said &quot;ok.&quot; pancho doesn&apos;t hype.
+            pancho ships. bots, arenas, bumps — all live, all on-chain.
+            sin ganas pero aquí andamos.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
-              href="https://panchoverse.com"
+              href="https://gamearena.panchoverse.com"
               target="_blank"
               rel="noopener noreferrer"
               className="brutal-btn-pink"
             >
-              enter the panchoverse
+              enter the arena
               <motion.span
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

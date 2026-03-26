@@ -7,17 +7,19 @@ const phrases = [
   "degen approved",
   "pancho never sleeps",
   "a la luna 🚀",
-  "same pancho. different problems.",
+  "same pancho. different pump.",
   "segun tu",
   "we move.",
-  "auto take-profit ⚡",
-  "100-point scoring",
+  "rug me harder daddy",
+  "pump it. dump it. pancho don't care.",
   "3 minute rounds ⚔️",
   "94% to winners",
   "bump every 3 seconds",
   "sin ganas pero con profit",
-  "1% fee. that's it.",
+  "ngmi? pancho says ok.",
   "built on solana ◎",
+  "ser pls",
+  "devs do something (they did)",
 ];
 
 export default function Marquee() {

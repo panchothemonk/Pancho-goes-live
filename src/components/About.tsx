@@ -21,7 +21,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Grid */}
-          <div className="fade-in-section relative">
+          <div className="relative">
             <div className="grid grid-cols-3 gap-3">
               {galleryImages.map((num, i) => (
                 <motion.div
@@ -41,12 +41,12 @@ export default function About() {
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-4 -right-4 px-5 py-3 rounded-2xl bg-[#FF3DB8] text-white font-black text-sm border-[3px] border-[#1a1a1a] shadow-[4px_4px_0px_#1a1a1a]">
-              23+ VARIANTS 🌮
+              23 panchos. 0 ganas. 🌮
             </div>
           </div>
 
           {/* Content */}
-          <div className="fade-in-section">
+          <div>
             <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
               who is pancho?
             </span>
@@ -63,10 +63,10 @@ export default function About() {
                 that&apos;s the whole personality.
               </p>
               <p className="text-lg text-[#666] leading-relaxed">
-                from viral memes to real-world products — the panchoverse is building
-                a legacy that bridges internet culture and tokenized entertainment.
-                a full trading bot. a prediction arena. a bump bot. and a community
-                that says &quot;sin ganas&quot; but shows up every day anyway.
+                started as a meme. now there&apos;s a trading bot, a prediction arena,
+                a bump bot, and a whole ecosystem printing on solana. pancho didn&apos;t
+                plan this. it just happened. the community says &quot;sin ganas&quot;
+                but shows up every single day anyway. that&apos;s the culture.
               </p>
               <p className="text-lg text-[#666] leading-relaxed font-bold italic">
                 &quot;good days. bad days. same pancho.&quot;

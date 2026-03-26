@@ -7,7 +7,7 @@ import Image from "next/image";
 const communityLinks = [
   {
     title: "join the headquarters",
-    desc: "the main pancho telegram. memes, alpha, and comfortable silence.",
+    desc: "the main TG. memes, alpha, comfortable silence, and the occasional 'ok.'",
     href: "https://t.me/panchodegen",
     icon: "💬",
     color: "#14F195",
@@ -15,7 +15,7 @@ const communityLinks = [
   },
   {
     title: "stay updated",
-    desc: "follow pancho on X. mostly retweets and the occasional 'ok.'",
+    desc: "follow for pump.fun alpha, memes, and pancho being pancho. mostly vibes.",
     href: "https://x.com/Panchomonks",
     icon: "🐦",
     color: "#FF3DB8",
@@ -23,7 +23,7 @@ const communityLinks = [
   },
   {
     title: "watch the journey",
-    desc: "the pancho youtube. behind the scenes, dev logs, and vibes.",
+    desc: "dev logs, degen recaps, and pancho content you didn't know you needed.",
     href: "https://youtube.com/@Panchojourney",
     icon: "📺",
     color: "#FF4444",
@@ -43,13 +43,13 @@ export default function Community() {
             the gang
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-tight text-[#1a1a1a]">
-            more than a community.
+            not a community.
             <br />
-            <span className="text-[#FF3DB8]">a movement.</span>
+            <span className="text-[#FF3DB8]">a cult. (but chill.)</span>
           </h2>
           <p className="text-lg text-[#666] max-w-2xl mx-auto leading-relaxed">
-            a collective driven by creativity, passion, and the raw chaotic
-            energy that makes pancho who he is. sin ganas but always showing up.
+            we don&apos;t talk much. but we show up. every day. sin ganas.
+            the kind of degens that say &quot;gm&quot; at 4pm and mean it.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function Community() {
         </div>
 
         {/* Pancho face strip */}
-        <div className="fade-in-section">
+        <div>
           <div className="flex justify-center items-center gap-2 sm:gap-4 flex-wrap">
             {panchoFaces.map((num, i) => (
               <motion.div

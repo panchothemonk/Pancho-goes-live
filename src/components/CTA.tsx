@@ -27,19 +27,19 @@ export default function CTA() {
         </h2>
 
         <p className="text-lg sm:text-xl text-[#666] max-w-2xl mx-auto mb-12 leading-relaxed">
-          from viral memes to real-world products. a trading bot. a prediction arena.
-          a bump bot. a community. and a token that pays you back 50%. the panchoverse
-          isn&apos;t coming — it&apos;s already here. sin ganas pero con profit.
+          trading bot. prediction arena. bump bot. revenue-sharing token.
+          all live. all on solana. pancho didn&apos;t ask for this but here we are.
+          sin ganas pero con profit.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://panchoverse.com"
+            href="https://gamearena.panchoverse.com"
             target="_blank"
             rel="noopener noreferrer"
             className="brutal-btn-pink text-lg"
           >
-            enter the panchoverse
+            enter the arena ⚔️
             <motion.span
               animate={{ x: [0, 4, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}

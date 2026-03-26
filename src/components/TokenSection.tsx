@@ -13,7 +13,7 @@ const revenueStreams = [
 const tokenStats = [
   { label: "revenue to holders", value: "50%", color: "#14F195" },
   { label: "on-chain", value: "solana", color: "#8B5CF6" },
-  { label: "products live", value: "4+", color: "#FFB800" },
+  { label: "tools live", value: "4+", color: "#FFB800" },
   { label: "status", value: "coming", color: "#FF3DB8" },
 ];
 
@@ -31,14 +31,14 @@ export default function TokenSection() {
             <span className="text-[#FF3DB8]">pays back.</span>
           </h2>
           <p className="text-lg text-[#999] max-w-2xl mx-auto leading-relaxed">
-            50% of all panchoverse revenue goes back to $PANCHO token holders.
-            every product. every fee. every transaction. holders eat first.
+            50% of ALL panchoverse revenue goes straight to holders.
+            every bot fee. every arena round. every bump cycle. you hold, you eat.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left: Revenue visual */}
-          <div className="fade-in-section">
+          <div>
             <div className="text-center mb-8">
               <span className="text-[100px] sm:text-[140px] font-black text-[#FF3DB8] leading-none inline-block">
                 50%
@@ -65,7 +65,7 @@ export default function TokenSection() {
           </div>
 
           {/* Right: Token card + stats */}
-          <div className="fade-in-section">
+          <div>
             <div className="relative p-8 rounded-3xl bg-white/5 border-[3px] border-[#FF3DB8] shadow-[6px_6px_0px_#FF3DB8] mb-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-[3px] border-[#FF3DB8]">
@@ -93,7 +93,7 @@ export default function TokenSection() {
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-[#999]">backed by</span>
-                  <span className="font-bold text-white">4 live products</span>
+                  <span className="font-bold text-white">4 live tools</span>
                 </div>
                 <div className="flex justify-between py-2">
                   <span className="text-[#999]">status</span>
