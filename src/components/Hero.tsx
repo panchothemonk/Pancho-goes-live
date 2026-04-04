@@ -52,12 +52,12 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
-              href="https://gamearena.panchoverse.com"
+              href="https://fun.panchoverse.com/auth"
               target="_blank"
               rel="noopener noreferrer"
               className="brutal-btn-pink"
             >
-              enter the arena
+              enter pancho.fun
               <motion.span
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
