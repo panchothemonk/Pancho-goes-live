@@ -13,7 +13,7 @@ const revenueStreams = [
 const tokenStats = [
   { label: "revenue to holders", value: "50%", color: "#14F195" },
   { label: "on-chain", value: "solana", color: "#8B5CF6" },
-  { label: "tools live", value: "4+", color: "#FFB800" },
+  { label: "tools live", value: "soon", color: "#FFB800" },
   { label: "status", value: "coming", color: "#FF3DB8" },
 ];
 
@@ -93,7 +93,7 @@ export default function TokenSection() {
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/10">
                   <span className="text-[#999]">backed by</span>
-                  <span className="font-bold text-white">4 live tools</span>
+                  <span className="font-bold text-[#FFB800]">coming soon</span>
                 </div>
                 <div className="flex justify-between py-2">
                   <span className="text-[#999]">status</span>

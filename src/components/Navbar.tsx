@@ -108,12 +108,12 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://gamearena.panchoverse.com"
+            href="https://fun.panchoverse.com/auth"
             target="_blank"
             rel="noopener noreferrer"
             className="brutal-btn-pink text-sm !py-2.5 !px-5"
           >
-            enter arena ⚔️
+            enter pancho.fun
           </a>
         </div>
 
@@ -161,12 +161,12 @@ export default function Navbar() {
                 ))}
               </div>
               <a
-                href="https://gamearena.panchoverse.com"
+                href="https://fun.panchoverse.com/auth"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="brutal-btn-pink text-center mt-2"
               >
-                enter arena ⚔️
+                enter pancho.fun
               </a>
             </div>
           </motion.div>
