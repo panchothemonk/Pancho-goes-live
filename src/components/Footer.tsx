@@ -12,8 +12,6 @@ const footerLinks = {
   Panchoverse: [
     { label: "Home", href: "#" },
     { label: "Fun Bot", href: "https://fun.panchoverse.com" },
-    { label: "Degen Arena", href: "https://gamearena.panchoverse.com" },
-    { label: "Hits Bot", href: "https://hit.panchoverse.com" },
   ],
   Social: [
     { label: "X / Twitter", href: "https://x.com/Panchomonks" },
