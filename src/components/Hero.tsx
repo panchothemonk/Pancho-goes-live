@@ -44,11 +44,20 @@ export default function Hero() {
             pancho.
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#666] max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-[#666] max-w-lg mx-auto lg:mx-0 mb-6 leading-relaxed">
             woke up. checked chart. said &quot;ok.&quot; pancho doesn&apos;t hype.
             pancho ships. bots, arenas, bumps — all live, all on-chain.
             sin ganas pero aquí andamos.
           </p>
+
+          <div className="flex items-center gap-3 justify-center lg:justify-start mb-8">
+            <div className="relative w-8 h-8 shrink-0">
+              <Image src="/images/taco.png" alt="TACO" fill className="object-contain" />
+            </div>
+            <span className="text-sm font-black text-[#1a1a1a]">
+              pancho eats <span className="text-[#FF3DB8]">$TACO</span> — the panchoverse token.
+            </span>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
@@ -117,9 +126,12 @@ export default function Hero() {
           <motion.div
             animate={{ y: [6, -10, 6] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-24 left-0 sm:left-2 brutal-tag text-xs"
+            className="absolute bottom-24 left-0 sm:left-2 brutal-tag-pink text-xs flex items-center gap-1.5"
           >
-            degen approved 🌮
+            <div className="relative w-5 h-5 shrink-0">
+              <Image src="/images/taco.png" alt="TACO" fill className="object-contain" />
+            </div>
+            $TACO
           </motion.div>
           <motion.div
             animate={{ y: [-5, 10, -5], x: [-3, 3, -3] }}
