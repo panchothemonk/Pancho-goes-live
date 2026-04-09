@@ -17,7 +17,7 @@ const footerLinks = {
   Social: [
     { label: "X / Twitter", href: "https://x.com/Panchomonks" },
     { label: "YouTube", href: "https://youtube.com/@Panchojourney" },
-    { label: "Telegram", href: "https://t.me/panchodegen" },
+    { label: "Telegram", href: "https://t.me/panchoTACOportal" },
   ],
 };
 
@@ -67,7 +67,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://t.me/panchodegen"
+                href="https://t.me/panchoTACOportal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border-2 border-[#1a1a1a] flex items-center justify-center text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all"

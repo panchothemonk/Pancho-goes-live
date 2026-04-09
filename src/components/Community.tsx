@@ -8,7 +8,7 @@ const communityLinks = [
   {
     title: "join the headquarters",
     desc: "the main TG. memes, alpha, comfortable silence, and the occasional 'ok.'",
-    href: "https://t.me/panchodegen",
+    href: "https://t.me/panchoTACOportal",
     icon: "💬",
     color: "#14F195",
     cta: "join telegram",

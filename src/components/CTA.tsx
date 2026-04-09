@@ -48,7 +48,7 @@ export default function CTA() {
             </motion.span>
           </a>
           <a
-            href="https://t.me/panchodegen"
+            href="https://t.me/panchoTACOportal"
             target="_blank"
             rel="noopener noreferrer"
             className="brutal-btn-outline text-lg"
