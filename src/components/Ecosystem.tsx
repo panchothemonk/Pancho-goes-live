@@ -19,7 +19,7 @@ const products = [
   {
     title: "pancho hits bot",
     desc: "your token needs volume. pancho hits it every 3 seconds. buys. sells. bumps to the top on pump.fun trending. you just watch.",
-    link: "https://hit.panchoverse.com",
+    link: "https://bumps.panchoverse.com/",
     image: "/images/pancho/pancho-12.webp",
     tag: "BUMP BOT",
     color: "#FF3DB8",
