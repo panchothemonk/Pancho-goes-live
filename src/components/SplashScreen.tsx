@@ -91,6 +91,19 @@ export default function SplashScreen({
             sin ganas • still here
           </motion.p>
 
+          {/* $TACO badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.5 }}
+            className="flex items-center gap-2 mt-4 bg-white/20 border border-white/40 rounded-full px-4 py-2"
+          >
+            <div className="relative w-6 h-6 shrink-0">
+              <Image src="/images/taco.png" alt="TACO" fill className="object-contain" />
+            </div>
+            <span className="text-white font-black text-sm tracking-wide">$TACO</span>
+          </motion.div>
+
           {/* Loading bar — brutal style */}
           <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-48">
             <div className="h-[4px] bg-white/30 rounded-full overflow-hidden border border-white/50">

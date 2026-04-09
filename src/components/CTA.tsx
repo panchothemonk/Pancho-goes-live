@@ -34,12 +34,12 @@ export default function CTA() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://fun.panchoverse.com/auth"
+            href="https://gamearena.panchoverse.com"
             target="_blank"
             rel="noopener noreferrer"
             className="brutal-btn-pink text-lg"
           >
-            enter pancho.fun
+            enter the arena
             <motion.span
               animate={{ x: [0, 4, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
