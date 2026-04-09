@@ -24,15 +24,16 @@ export default function TokenSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-sm font-black tracking-[0.2em] uppercase text-[#FF3DB8] mb-4 block">
-            $PANCHO token
+            $TACO token
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-tight text-white">
-            the token that{" "}
-            <span className="text-[#FF3DB8]">pays back.</span>
+            pancho eats{" "}
+            <span className="text-[#FF3DB8]">$TACO.</span>
           </h2>
           <p className="text-lg text-[#999] max-w-2xl mx-auto leading-relaxed">
+            pancho is pancho. but $TACO is the token.
             50% of ALL panchoverse revenue goes straight to holders.
-            every bot fee. every arena round. every bump cycle. you hold, you eat.
+            you hold $TACO, you eat.
           </p>
         </div>
 
@@ -70,14 +71,14 @@ export default function TokenSection() {
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-[3px] border-[#FF3DB8]">
                   <Image
-                    src="/images/pancho/pancho-1.webp"
-                    alt="Pancho"
+                    src="/images/taco.png"
+                    alt="TACO"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-black text-white">$PANCHO</h3>
+                  <h3 className="text-2xl font-black text-white">$TACO</h3>
                   <p className="text-sm text-[#999]">the panchoverse token</p>
                 </div>
               </div>

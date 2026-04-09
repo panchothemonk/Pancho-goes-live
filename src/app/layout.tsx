@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "PANCHO — sin ganas. still here.",
   description:
-    "the degen ape in all of us. trading bots, prediction arenas, bump bots, and a token that pays you back. sin ganas pero con profit.",
+    "the degen ape in all of us. trading bots, prediction arenas, bump bots, and $TACO — the token pancho eats. sin ganas pero con profit.",
   icons: {
     icon: "/favicon.ico",
   },

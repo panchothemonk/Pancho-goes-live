@@ -27,7 +27,7 @@ export default function CTA() {
         </h2>
 
         <p className="text-lg sm:text-xl text-[#666] max-w-2xl mx-auto mb-12 leading-relaxed">
-          trading bot. prediction arena. bump bot. revenue-sharing token.
+          trading bot. prediction arena. bump bot. $TACO token.
           all live. all on solana. pancho didn&apos;t ask for this but here we are.
           sin ganas pero con profit.
         </p>
